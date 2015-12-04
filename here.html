@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Test	</title>
+	
+	<script type="text/javascript" src="libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="libs/bootstrap.min.js"></script>
+</head>
+<body ng-controller="AppMainCtrl as mainCtrl">>
+	<div class="wrapper">
+		<header>
+			<h1 hg-show="mainCtrl.name">{{mainCtrl.name}}</h1>
+		</header>
+		<section>
+			<h2>Hello</h2>
+			<img src="http://static.independent.co.uk/s3fs-public/thumbnails/image/2014/03/12/12/family%20guy.jpg" alt="family-guy" width="500" height="250">
+			<ul>
+				<li><a href="#">{{"here1"}}</a></li>
+				<li><a href="#">{{"here2"}}</a></li>
+				<li><a href="#">{{"here3"}}</a></li>
+				<li><a href="#">{{"here4"}}</a></li>
+			</ul>
+
+			<ul>
+				<li ng-repeat="link in app.links"> {{link.label}} </li>
+			</ul>
+		</section>
+	</div>
+	<script type="text/javascript" src="libs/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
