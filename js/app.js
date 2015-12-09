@@ -8,6 +8,13 @@
 		this.products = productObj;
 	}
 
+	app.controller('PanelCtrl', PanelCtrl(detail));
+	function PanelCtrl(detail){
+		this.description = detail.description;
+
+		
+	};
+
 
 	var productObj = [
 		{
