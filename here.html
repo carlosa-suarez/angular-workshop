@@ -6,30 +6,36 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 </head>
-<body ng-controller="AppMainCtrl as mainCtrl">>
+<body ng-controller="AppMainCtrl as mainCtrl">
 	<div class="wrapper container">
+		
 		<header>
-			<h1 hg-show="mainCtrl.name">{{mainCtrl.name}}</h1>
+			<h1>Products gallery</h1>
 		</header>
 
-		<!-- gallery -->
-		<section>
-			<h2>Hello</h2>
-			<img src="http://static.independent.co.uk/s3fs-public/thumbnails/image/2014/03/12/12/family%20guy.jpg" alt="family-guy" width="500" height="250">
-			<ul>
-				<li><a href=""><img src="" alt=""></a></li>
-				<li><a href=""><img src="" alt=""></a></li>
-				<li><a href=""><img src="" alt=""></a></li>
-			</ul>
-		</section>
+		<div class="product" ng-repeat="product in mainCtrl.products">
+			<!-- gallery -->
+			<section>
+				<h2>{{product.name}}</h2>
+				<img ng-src="{{product.image[0]}}" alt="product.images[0]" width="500" height="250">
+				<ul ng-repeat="img in product.image" class="pagination">
+					<li><a href=""><img ng-src="{{img}}" alt="" class="img-thumbnails" width="100" height="100"></a></li>
+				</ul>
+			</section>
 
-		<!-- tabs -->
-		<section ng-controller="TabsCtrl as tabsCtrl">
-			<ul class="nav nav-pills">
-				<li ng-repeat="tab in tabsCtrl.tabs" ng-class="{active:tabsCtrl.isTab(tab.id)}"><a href="{{tab.url}}" ng-click="tabsCtrl.setTab(tab.id)"> {{tab.label}}</a></li>
-			</ul>
-			<div ng-repeat="tab in tabsCtrl.tabs" ng-show="tabsCtrl.isTab(tab.id)"><p>{{tab.content}}</p></div>
-		</section>
+			<!-- tabs -->
+			<section >
+				<ul class="nav nav-pills">
+					<li ng-repeat="(label,content) in product.details">
+						<a href="">{{label}}</a>
+					</li>
+				</ul>
+				<div ng-repeat="(label,content) in product.details">
+					<p>{{content}}</p>
+				</div>
+				
+			</section>
+		</div>
 	</div>
 	<script type="text/javascript" src="libs/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="libs/bootstrap.min.js"></script>
