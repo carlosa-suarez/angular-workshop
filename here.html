@@ -30,9 +30,15 @@
 						<a href="">{{label}}</a>
 					</li>
 				</ul>
-				<div ng-repeat="(label,content) in product.details">
-					<p>{{content.description}}</p>
-					
+				<div ng-repeat="(property,detail) in product.details" >
+					<p ng-if="{property==='description'}">1{{detail}}</p>
+					<div ng-repeat="content in detail">
+						
+						<div ng-repeat="(tag,data) in content">	
+							<dt>2{{tag}}</dt>
+							<dd>3{{data}}</dd>	
+						</div>
+					</div>
 				</div>
 				
 			</section>
