@@ -25,12 +25,10 @@
 			],
 			"details":{
 				"description":"Lorem ipsum 1",
-				"value":[
-					{
+				"value":{
 						"Usd": 1000,
 						"Cops": 3000000
-					}
-				],
+				},
 				"stores":[
 					{
 						"name": "store1",
@@ -53,16 +51,14 @@
 			"image": [
 				"img/simpson1.jpg",
 				"img/simpson2.jpg",
-				"img/simpson3.jpg"
+				"img/simpson3.png"
 			],
 			"details":{
 				"description":"Lorem ipsum 2",
-				"value":[
-					{
+				"value": {
 						"Usd": 1000,
 						"Cops": 3000000
-					}
-				],
+				},
 				"stores":[
 					{
 						"name": "store4",
@@ -88,12 +84,10 @@
 			],
 			"details":{
 				"description":"Lorem ipsum 3",
-				"value":[
-					{
-						"Usd": 1000,
-						"Cops": 3000000
-					}
-				],
+				"value":{
+					"Usd": 1000,
+					"Cops": 3000000
+				},
 				"stores":[
 					{
 						"name": "store7",
