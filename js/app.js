@@ -1,11 +1,19 @@
 (function() {
-	console.log(angular);
 	var app = angular.module('app',[ ]);
 
 	app.controller('AppMainCtrl', AppMainCtrl);
 
 	function AppMainCtrl() {
 		this.products = productObj;
+
+		this.notf = 0;
+		this.setActive = function(notf) {
+			this.notf = notf;
+		};
+
+		this.isActive = function(notf) {
+			return this.notf === notf;
+		};
 	}
 	
 	app.controller('GalleryController', galleryontroller);
@@ -25,7 +33,6 @@
 			this.tab = tab;	
 		};
 	};
-	
 
 	var productObj = [
 		{
@@ -56,7 +63,24 @@
 						"address": "store3 address",
 					}
 				]
-			}
+			},
+			"reviews": [
+				{
+					"stars": 4,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				},
+				{
+					"stars": 2,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				},
+				{
+					"stars": 4,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				}
+			]
 		},
 		{
 			"id":"2",
@@ -86,7 +110,24 @@
 						"address": "store6 address",
 					}
 				]
-			}
+			},
+			"reviews": [
+				{
+					"stars": 4,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				},
+				{
+					"stars": 2,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				},
+				{
+					"stars": 4,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				}
+			]
 		},{
 			"id":"3",
 			"name": "Humor Colombiano",
@@ -115,7 +156,24 @@
 						"address": "store9 address",
 					}
 				]
-			}
+			},
+			"reviews": [
+				{
+					"stars": 4,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				},
+				{
+					"stars": 2,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				},
+				{
+					"stars": 4,
+					"body": "Lorem Ipsum",
+					"author": "mail@test.com"
+				}
+			]
 		}
 	];
 
