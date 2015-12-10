@@ -7,12 +7,25 @@
 	function AppMainCtrl() {
 		this.products = productObj;
 	}
-	/*
-	app.controller('PanelCtrl', PanelCtrl(detail));
-	function PanelCtrl(detail){
-		this.description = detail.description;	
+	
+	app.controller('GalleryController', galleryontroller);
+	function galleryontroller(){
+		this.image = 0;
+
+		this.setImg = function(img){
+			this.image = img;	
+		};
 	};
-	*/
+
+	app.controller('TabsController', tabsController);
+	function tabsController(){
+		this.tab = 0;
+
+		this.setTab = function(tab){
+			this.tab = tab;	
+		};
+	};
+	
 
 	var productObj = [
 		{

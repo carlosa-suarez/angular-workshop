@@ -15,37 +15,39 @@
 
 		<div class="list-group-item" ng-repeat="product in mainCtrl.products">
 			<!-- gallery -->
-			<section  class="gallery">
+			<section  class="gallery" ng-controller="GalleryController as galleryCtrl">
 				<h2>{{product.name}}</h2>
 				<div class="img-wrap">
-					<img ng-src="{{product.image[0]}}" alt="product.images[0]" width="500" height="250" />
+					<img ng-src="{{galleryCtrl.image || product.image[0]}}" alt="product.images[0]" width="500" height="250" />
 				</div>
 				<ul class="img-thumbnails clearfix">
-					<li  ng-repeat="img in product.image"  class="small-image pull-left thumbnail"><img ng-src="{{img}}" alt="" class="img-thumbnails" width="100" height="100" /></li>
+					<li  ng-repeat="img in product.image"  class="small-image pull-left thumbnail" ng-click="galleryCtrl.setImg(img)">
+						<img ng-src="{{img}}" alt="" class="img-thumbnails" width="100" height="100" />
+					</li>
 				</ul>
 			</section>
 
 			<!-- tabs -->
-			<section >
+			<section ng-controller="TabsController as tabsCtrl">
 				<ul class="nav nav-pills">
 					<li ng-repeat="(label,content) in product.details">
-						<a href="">{{label}}</a>
+						<a href="" ng-click="tabsCtrl.setTab(label)">{{label}}</a>
 					</li>
 				</ul>
-				<div class="panel" >
-					<div ng-repeat="(tag, detail) in product.details" ng-show="'description'===tag">
+				<div class="panel" ng-show="'description'=== tabsCtrl.tab">
+					<div ng-repeat="(tag, detail) in product.details" ng-show="'description'=== tag" >
 						<p>{{detail}} </p>
 					</div>
 				</div>
 						
-				<div class="panel">
+				<div class="panel" ng-show="'value'=== tabsCtrl.tab">
 					<div ng-repeat="(tag,data) in product.details.value">	
 						<dt>2{{tag}}</dt>
 						<dd>3{{data}}</dd>	
 					</div>
 				</div>
 
-				<div class="panel">
+				<div class="panel" ng-show="'stores'=== tabsCtrl.tab">
 					<div ng-repeat="store in product.details.stores">	
 						<dt>2{{store.name}}</dt>
 						<dd>3{{store.address}}</dd>	
