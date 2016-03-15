@@ -44,7 +44,7 @@
 				"img/family3.jpg"
 			],
 			"details":{
-				"description":"Lorem ipsum 1",
+				"description":"Lorem ipsum 1 Lorem ipsum 1 Lorem ipsum 1 Lorem ipsum 1 Lorem ipsum 1 Lorem ipsum 1",
 				"value":{
 						"Usd": 1000,
 						"Cops": 3000000
@@ -91,7 +91,7 @@
 				"img/simpson3.png"
 			],
 			"details":{
-				"description":"Lorem ipsum 2",
+				"description":"Lorem ipsum 2 Lorem ipsum 2 Lorem ipsum 2 Lorem ipsum 2 Lorem ipsum 2",
 				"value": {
 						"Usd": 1000,
 						"Cops": 3000000
@@ -137,7 +137,7 @@
 				"img/humor3.jpg"
 			],
 			"details":{
-				"description":"Lorem ipsum 3",
+				"description":"Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3 Lorem ipsum 3",
 				"value":{
 					"Usd": 1000,
 					"Cops": 3000000

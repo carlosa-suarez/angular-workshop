@@ -11,7 +11,7 @@
 		
 		<style>
 			.detail{
-				background-color: orange;
+				
 				width: 300px;
 				max-height: 0;
 				overflow: hidden;
@@ -25,6 +25,10 @@
 				width: 300px;
 			}
 
+			.notification {
+				border:1px solid tomato;
+				width: 300px;
+			}
 			.notification h3:after {
 				content:'+';
 				float:right;
@@ -36,7 +40,8 @@
 
 			.notification:active .detail,
 			.notification.active .detail {
-				max-height: 300px;
+				max-height:10em;
+
 			}
 		</style>
 		<h4>only css</h4>
@@ -67,6 +72,7 @@
 				<h3>{{notification.name}}</h3>
 				<div class="detail">
 					<p>{{notification.details.description}}</p>
+
 				</div>
 			</div>
 		</div>
